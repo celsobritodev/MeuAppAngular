@@ -1,0 +1,31 @@
+<p> Inicio Componente Hello</p>
+
+<ul>
+  @for(item of pokelist; track $index) {
+    <li>{{item.name}} | {{item.url}} </li>
+  } @empty {
+    <li>Nenhum Pokemon encontrado</li>
+  }
+</ul>
+
+
+<p>Contador:{{contador()}} </p>
+
+<!--
+<button class="btn btn-primary mb-5" (click)="AddContador()">Add</button>
+<button class="btn btn-primary mb-5" (click)="SubContador()">Sub</button> -->
+
+<!--
+@if(contador() > 10)  {
+  <button class="btn btn-primary" (click)="Acao()">Ação</button>
+} -->
+
+<!--
+<button class="btn btn-primary" (click) ="Confirmar.emit()"> Ação (Estou no app-hello)</button> -->
+
+<p>Renderizando</p>
+
+<router-outlet></router-outlet>
+
+
+<p>Fim Componente Hello</p>
