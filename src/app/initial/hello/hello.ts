@@ -1,17 +1,19 @@
 import { Component, EventEmitter, Input, OnInit, Output, signal } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { Helloservice } from './helloservice';
+import { CommonModule } from '@angular/common';
 
 
 
 @Component({
   selector: 'app-hello',
-  imports: [RouterModule],
+  standalone:true,
+  imports: [CommonModule,RouterModule],
   //templateUrl: './hello.html',
 
 //Tutorial Angular 2025 | Para Quem tem Pressa
 // https://youtu.be/UVP-HZECmo0
-// ERRO: NÃO ESTÁ LISTANDO A POKELIST
+
  template: `
     <ul>
       @for(item of pokelist; track item.name) {
@@ -33,7 +35,7 @@ export class Hello implements OnInit {
     this.service.getPoke()
     .subscribe(
       res => {
-        this.pokelist = res.result;
+        this.pokelist = res.results;
         console.log(res);
       }
     );
@@ -56,13 +58,13 @@ contador = signal(0);
 
 SubContador() {
   this.contador.update(x=>--x);
-throw new Error('Method not implemented.');
+
 }
 
 
 AddContador() {
   this.contador.update(x=>++x);
-throw new Error('Method not implemented.');
+
 }
 
 

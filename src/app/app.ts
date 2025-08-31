@@ -5,6 +5,7 @@ import { Hello } from "./initial/hello/hello";
 
 @Component({
   selector: 'app-root',
+  standalone: true,
   imports: [RouterOutlet, RouterModule],
   templateUrl: './app.html',
   styleUrl: './app.css'
